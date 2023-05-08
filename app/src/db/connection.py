@@ -3,7 +3,7 @@
 
 import os
 import motor.motor_asyncio
-from app.logger.log import new_logger
+from logger.log import new_logger
 
 logger = new_logger("db")
 

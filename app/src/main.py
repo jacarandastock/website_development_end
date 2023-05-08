@@ -1,12 +1,8 @@
-import os
-
 import uvicorn
 
 from fastapi import FastAPI
-from app.config import *
-from app.logger.log import new_logger
-from fastapi.middleware.cors import CORSMiddleware
-
+from config import *
+from logger.log import new_logger
 
 # 开启一个logger
 logger = new_logger("__init__")

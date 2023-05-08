@@ -1,7 +1,7 @@
 import os
 import logging
 import sys
-from app.config import debug
+from config import debug
 
 os.makedirs('./log', exist_ok=True)
 _error_log_file = os.path.expanduser('./log/error.log')
