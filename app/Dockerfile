@@ -8,7 +8,7 @@ RUN apk add --no-cache build-base
 COPY ./requirements.txt .
 
 # Install the Python dependencies
-RUN pip install --no-cache-dir --upgrade -r requirements.txt
+RUN pip install --no-cache-dir --upgrade --user -r requirements.txt
 
 # Copy the application source code into the container
 COPY src /app
