@@ -3,6 +3,7 @@ import uvicorn
 from fastapi import FastAPI
 from config import *
 from logger.log import new_logger
+from routers import example
 
 # 开启一个logger
 logger = new_logger("__init__")
@@ -41,6 +42,25 @@ reload = bool(int(os.environ.get("UVICORN_RELOAD", 1)))
 
 app = FastAPI(openapi_url=openapi_url, docs_url=docs_url, redoc_url=redoc_url)
 
+"""
+def register_routers(application: FastAPI, routers_dir: str = "routers"):
+    # Iterate through the routers directory
+    for file_name in os.listdir(routers_dir):
+        # Only process .py files
+        if file_name.endswith(".py") and not file_name.startswith("__"):
+            module_name = file_name[:-3]  # Remove .py extension
+            module_path = f"{routers_dir}.{module_name}"
+            # Import the router module
+            router_module = importlib.import_module(module_path)
+            logger.debug("Successfully imported router module: %s", module_path)
+            if hasattr(router_module, "router"):
+                app.include_router(router_module.router)
+                logger.debug("Successfully registered router: %s", module_path)
+
+register_routers(app)
+"""
+
+app.include_router(example.router)
 
 @app.get("/")
 async def root():

@@ -3,9 +3,9 @@ import logging
 import sys
 from config import debug
 
-os.makedirs('./log', exist_ok=True)
-_error_log_file = os.path.expanduser('./log/error.log')
-_critical_log_file = os.path.expanduser('./log/critical.log')
+os.makedirs('./logs', exist_ok=True)
+_error_log_file = os.path.expanduser('./logs/error.log')
+_critical_log_file = os.path.expanduser('./logs/critical.log')
 
 formatter = logging.Formatter('[%(asctime)s %(name)s] %(levelname)s: %(message)s')
 default_handler = logging.StreamHandler(sys.stdout)

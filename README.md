@@ -8,7 +8,7 @@ End!
 
 ## 环境变量
 
-这部分将来需要写入docker-compose.yml文件中, 本地开发环境需要在本地设置`JACARANDA_API_MONGO_USERNAME`, 
+这部分将来需要写入docker-compose.yml文件中, 本地开发环境需要在本地设置`JACARANDA_API_MONGO_USERNAME`,`JACARANDA_API_MONGO_PORT`
 `JACARANDA_API_MONGO_PASSWORD` 和 `JACARANDA_API_MONGO_URL`, 其他可留空
 ```text
 JACARANDA_API_OPENAPI  
