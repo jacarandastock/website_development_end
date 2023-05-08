@@ -10,11 +10,15 @@ on:
 jobs:
 
   build:
-
+    
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: .
     steps:
     - name: Checkout
       uses: actions/checkout@v3
       
     - name: Build the Docker image
-      run: docker build . --file ./app/Dockerfile --tag jacarandastock_fontend:$(date +%s)
+      working-directory: ./app
+      run: docker build . --file Dockerfile --tag jacarandastock_fontend:$(date +%s)
